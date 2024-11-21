@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 /**
- * @author enabfouad
+ @author enabf
  * This class implements the Runnable interface to check if a subset of an array
  * adds up to a target value `b`. It uses recursion and multiple threads to 
  * perform the subset sum check.
@@ -13,7 +13,11 @@ public class ThreadCheckArray implements Runnable
 	SharedData sd;// Shared data object that holds the array, target value `b`, and other shared state
 	ArrayList<Integer> array;
 	int b;
-	//Constructor for the ThreadCheckArray class.
+    /**
+     * Constructor for the ThreadCheckArray class.
+     * 
+     * @param sd SharedData object that contains the array, target value, and shared state
+     */
 	
 	public ThreadCheckArray(SharedData sd) 
 	{
