@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestThreadCheckArray {
@@ -6,16 +7,16 @@ public class TestThreadCheckArray {
 			Thread thread1, thread2;
 			System.out.println("Enter array size");
 			int num  = input.nextInt();
-			int [] array = new int[num];
-			System.out.println("Enter numbers for array");
+			ArrayList<Integer> arraylist = new ArrayList<>();
+			System.out.println("Enter numbers for the ArrayList");
 			
 			for (int index = 0; index < num; index++) 
-				array[index] = input.nextInt();
+				arraylist.add(input.nextInt());
 			
 			System.out.println("Enter number");
 			num = input.nextInt();
 			
-			SharedData sd = new SharedData(array, num);
+			SharedData sd = new SharedData(arraylist, num);
 			
 			thread1 = new Thread(new ThreadCheckArray(sd), "thread1");
 			thread2 = new Thread(new ThreadCheckArray(sd), "thread2");
@@ -35,9 +36,9 @@ public class TestThreadCheckArray {
 				System.out.println("Sorry");
 				return;
 			}
-			System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().length);
+			System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().size());
 			System.out.print("I:    ");
-			for(int index = 0; index < sd.getArray().length ; index++)
+			for(int index = 0; index < sd.getArray().size() ; index++)
 				System.out.print(index + "    ");
 			System.out.println();
 			System.out.print("A:    ");
@@ -69,5 +70,3 @@ public class TestThreadCheckArray {
 	}
 
 }
-//eleia
-//adan
